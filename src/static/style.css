@@ -1,0 +1,113 @@
+:root {
+    --accent-color: #0f0;
+    --background-color: #fff;
+    --text-color: #000;
+    --faint-border-color: #8c8c8c;
+}
+
+.body {
+    margin-top: 46px;
+    margin-bottom: 46px;
+}
+
+.nav-container {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 45px;
+    background: var(--background-color);
+    border-bottom: 1px solid var(--faint-border-color);
+}
+
+.nav-search-form {
+    display: inline;
+}
+
+.nav-search {
+    width: calc(100% - 100px);
+}
+
+
+.player-container {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 45px;
+    background: var(--background-color);
+    border-top: 1px solid var(--faint-border-color);
+}
+
+.player-container-center, .nav-container-center {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.player-progress-container {
+    width: calc(100% - 100px);
+    display: inline-block;
+    position: relative;
+    --percentage: 0%;
+}
+
+.player-progress {
+    -webkit-appearance: none;
+    width: 100%;
+    background: none;
+    height: 9px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.player-progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+.player-progress:focus {
+    outline: none;
+}
+
+.player-progress::-webkit-slider-runnable-track, .player-progress::-moz-range-track, .player-progress::-ms-track {
+    width: 100%;
+    height: 9px;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    color: transparent;
+}
+
+.player-progress::-moz-range-thumb {
+    height: 9px;
+    width: 9px;
+    border-radius: 5px;
+    background: var(--accent-color);
+    cursor: pointer;
+    border: none;
+    z-index: 1;
+}
+
+.player-progress-container::after {
+    position: absolute;
+    content: "";
+    top: 7px;
+    left: 2px;
+    width: var(--percentage);
+    height: 1px;
+    background-color: var(--accent-color);
+}
+
+.player-progress-container::before {
+    position: absolute;
+    content: "";
+    top: 7px;
+    left: 2px;
+    right: -2px;
+    height: 1px;
+    background-color: var(--faint-border-color);
+}

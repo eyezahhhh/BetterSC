@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BetterSC</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/static/style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="nav-container">
+            <div class="nav-container-center">
+                <button class="nav-button" onClick="goHome()">Home</button>
+                <form class="nav-search-form">
+                    <input type="text" class="nav-search" placeholder="Search for songs">
+                </form>
+            </div>
+        </div>
+        <div class="body">
+            <audio class="player" controls></audio>
+            <div class="song-list"></div>
+        </div>
+        <div class="player-container">
+            <div class="player-container-center">
+                <button class="player-button">Play</button>
+                <div class="player-progress-container">
+                    <input type="range" class="player-progress" min="0" max="1000" value="0" onInput="playerProgressInteract(this)">
+                </div>
+            </div>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/static/script.js"></script>
+    </body>
+</html>
